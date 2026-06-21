@@ -1,0 +1,11 @@
+services:
+  rag-ai-assistant:
+    build: .
+    container_name: rag-ai-assistant
+    ports:
+      - "8501:8501"
+    env_file:
+      - .env
+    volumes:
+      - ./chroma_db:/app/chroma_db
+      - ./uploads:/app/uploads
